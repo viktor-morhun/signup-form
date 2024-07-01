@@ -7,6 +7,50 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
+  <main>
+    <form action="#" class="form">
+      <div class="form__container">
+        <h1 class="form__heading">Create an Account</h1>
+
+        <label for="firstname" class="form__label">First Name</label>
+        <input type="text" name="firstname" id="firstname" class="form__input">
+        
+        <label for="lastname" class="form__label">Last Name</label>
+        <input type="text" name="lastname" id="lastname" class="form__input">
+        
+        <label for="mail" class="form__label">E-mail</label>
+        <input type="email" name="mail" id="mail" class="form__input">
+        <span class="form__info">We'll never share your email with anyone else.</span>
+        
+        <input type="radio" name="sex" id="male" class="form__radio">
+        <label for="male" class="form__label">Male</label>
+        
+        <input type="radio" name="sex" id="female" class="form__radio">
+        <label for="female" class="form__label">Female</label>
+        
+        <input type="radio" name="sex" id="non-binary" class="form__radio">
+        <label for="non-binary" class="form__label">Non-binary</label>
+        
+        <label for="country" class="form__label">Country</label>
+        <select name="country" id="country">
+          <option value="1984">Ukraine</option>
+        </select>
+        
+        <label for="city" class="form__label">City</label>
+        <input type="text" class="form__input">
+        
+        <button type="submit" class="form__button button button--submit">Sign Up</button>
+        
+        <p class="form__info">
+          By clicking the 'Sign Up' button, you confirm 
+          that you accept our <a href="#" class="form__link link">Terms of Use</a> 
+          and <a href="#" class="form__link link">Privacy Policy.</a>
+        </p>
+        
+        <span class="form__text">Have an account?</span>
+        <a href="#" class="form__link link">Log In</a>
+      </div>
+    </form>
+  </main>
 </body>
 </html>
