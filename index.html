@@ -13,27 +13,28 @@
         <h1 class="form__heading">Create an Account</h1>
 
         <label for="firstname" class="form__label">First Name</label>
-        <input type="text" name="firstname" id="firstname" class="form__input">
-        
         <label for="lastname" class="form__label">Last Name</label>
+
+        <input type="text" name="firstname" id="firstname" class="form__input">
         <input type="text" name="lastname" id="lastname" class="form__input">
         
         <label for="mail" class="form__label">E-mail</label>
-        <input type="email" name="mail" id="mail" class="form__input">
+        <input type="email" name="mail" id="mail" class="form__input form__input--mail">
         <span class="form__info">We'll never share your email with anyone else.</span>
         
         <input type="radio" name="sex" id="male" class="form__radio">
-        <label for="male" class="form__label">Male</label>
+        <label for="male" class="form__label form__label--radio">Male</label>
         
         <input type="radio" name="sex" id="female" class="form__radio">
-        <label for="female" class="form__label">Female</label>
+        <label for="female" class="form__label form__label--radio">Female</label>
         
         <input type="radio" name="sex" id="non-binary" class="form__radio">
-        <label for="non-binary" class="form__label">Non-binary</label>
+        <label for="non-binary" class="form__label form__label--radio">Non-binary</label>
         
         <label for="country" class="form__label">Country</label>
         <select name="country" id="country">
-          <option value="1984">Ukraine</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="Japan">Japan</option>
         </select>
         
         <label for="city" class="form__label">City</label>
