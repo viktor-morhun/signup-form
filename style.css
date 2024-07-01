@@ -19,6 +19,7 @@ input, button, textarea, select {
 
   --text-color-primary: rgba(84, 84, 84, 1);
   --text-color-secondary: rgba(150, 150, 150, 1);
+  --text-color-button: rgba(255, 255, 255, 1);
 
   --input-color-inactive: rgba(228, 228, 228, 1);
   --input-color-active: rgba(0, 123, 255, 1);
@@ -35,6 +36,7 @@ html {
 }
 
 .form__container {
+  position: relative;
   width: 570px;
   height: 590px;
   /* background-color: coral; */
@@ -46,20 +48,24 @@ html {
 
 .form__heading {
   font-size: var(--fs-heading);
+  line-height: 32px;
   font-weight: 500;
   color: var(--heading-color);
 }
 
 .form__label {
   font-size: var(--fs-text);
+  line-height: 22px;
   color: var(--text-color-primary);
   display: inline-block;
   width: 245px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .form__label--radio {
   width: fit-content;
+  margin: 20px 20px 0 0;
 }
 
 .form__input {
@@ -69,6 +75,8 @@ html {
   border-radius: 6px;
   outline: none;
   padding: 8px 10px;
+  margin-top: 7px;
+  cursor: pointer;
 }
 
 .form__input--mail {
@@ -86,8 +94,88 @@ html {
 .form__info {
   color: var(--text-color-secondary);
   font-size: var(--fs-subtext);
+  line-height: 18px;
+  display: inline-block;
+  width: 500px;
+  margin-top: 7px;
 }
 
 .form__radio {
-  display: inline-block;
+  /* display: inline-block; */
+  cursor: pointer;
+}
+
+.form__select {
+  width: 245px;
+  height: 38px;
+  border: 1px solid var(--input-color-inactive);
+  border-radius: 6px;
+  outline: none;
+  padding: 8px 10px;
+  font-size: var(--fs-text);
+  cursor: pointer;
+}
+
+.form__select:invalid {
+  opacity: 0.4;
+  color: var(--text-color-primary);
+}
+
+.form__select:focus {
+  border: 1px solid var(--input-color-active);
+}
+
+.form__button {
+  width: 500px;
+  height: 38px;
+  margin-top: 20px;
+  border-radius: 6px;
+  color: var(--text-color-button);
+  background-color: var(--primary-color);
+  border: 1px solid var(--input-color-inactive);
+  cursor: pointer;
+  font-size: var(--fs-text);
+  font-weight: 500;
+}
+
+.form__button:focus {
+  border: 1px solid var(--input-color-active);
+}
+
+.form__info--terms {
+  display: block;
+  width: 410px;
+  text-align: center;
+  margin: 22px auto;
+  height: 36px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.form__text {
+  color: var(--text-color-primary);
+  font-size: var(--fs-text);
+  line-height: 22px;
+}
+
+.log-in-container {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  height: 22px;
+  margin-top: 41px;
+}
+
+.log-in-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 500px;
+  height: 1px;
+  background-color: var(--input-color-inactive);
+  bottom: 58px;
 }
