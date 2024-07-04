@@ -7,6 +7,63 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
+  <main>
+    <form action="#" class="form">
+      <div class="form__container">
+        <h1 class="form__heading">Create an Account</h1>
+
+        <label for="firstname" class="form__label">First Name</label>
+        <label for="lastname" class="form__label">Last Name</label>
+
+        <input type="text" name="firstname" id="firstname" class="form__input">
+        <input type="text" name="lastname" id="lastname" class="form__input">
+        
+        <label for="mail" class="form__label">E-mail</label>
+        <input type="email" name="mail" id="mail" class="form__input form__input--mail">
+        <span class="form__info">We'll never share your email with anyone else.</span>
+        
+        <label for="male" class="form__label form__label--radio">
+          <input type="radio" name="sex" id="male" class="form__radio radio">
+          <span class="radio__custom"></span>
+          Male
+        </label>
+        
+        <label for="female" class="form__label form__label--radio">
+          <input type="radio" name="sex" id="female" class="form__radio">
+          <span class="radio__custom"></span>
+          Female
+        </label>
+        
+        <label for="non-binary" class="form__label form__label--radio">
+          <input type="radio" name="sex" id="non-binary" class="form__radio">
+          <span class="radio__custom"></span>
+          Non-binary
+        </label>
+        
+        <label for="country" class="form__label">Country</label>
+        <label for="city" class="form__label">City</label>
+        <select required name="country" id="country" class="form__select">
+          <option value="" disabled selected hidden>Select</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="Japan">Japan</option>
+        </select>
+        
+        <input type="text" class="form__input">
+        
+        <button type="submit" class="form__button button button--submit">Sign Up</button>
+        
+        <p class="form__info form__info--terms">
+          By clicking the 'Sign Up' button, you confirm 
+          that you accept our <a href="#" class="form__link link">Terms of Use</a> 
+          and <a href="#" class="form__link link">Privacy Policy.</a>
+        </p>
+        
+        <div class="log-in-container">
+          <span class="form__text">Have an account?</span>
+          <a href="#" class="form__link link">Log In</a>
+        </div>
+      </div>
+    </form>
+  </main>
 </body>
 </html>

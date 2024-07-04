@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+}
+
+:root {
+  --backgound-page-color: rgba(247, 247, 247, 1);
+  --background-form-color: rgba(255, 255, 255, 1);
+
+  --primary-color: rgba(0, 123, 255, 1);
+  --heading-color: rgba(28, 28, 28, 1);
+
+  --text-color-primary: rgba(84, 84, 84, 1);
+  --text-color-secondary: rgba(150, 150, 150, 1);
+  --text-color-button: rgba(255, 255, 255, 1);
+  --text-color-placeholder: rgba(84, 84, 84, 0.4);
+
+  --input-color-inactive: rgba(228, 228, 228, 1);
+  --input-color-active: rgba(0, 123, 255, 1);
+  --input-color-error: rgba(188, 63, 63, 1);
+
+  --fs-heading: 24px;
+  --fs-text: 15px;
+  --fs-subtext: 13px;
+}
+
+html {
+  background-color: var(--backgound-page-color);
+  font-family: "Roboto", sans-serif;
+}
+
+.form__container {
+  position: relative;
+  width: 570px;
+  height: 590px;
+  margin: 55px auto;
+  padding: 35px 35px 16px 35px;
+  background-color: var(--background-form-color);
+  border-radius: 6px;
+}
+
+.form__heading {
+  font-size: var(--fs-heading);
+  line-height: 32px;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+.form__label {
+  font-size: var(--fs-text);
+  line-height: 22px;
+  color: var(--text-color-primary);
+  display: inline-block;
+  width: 245px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.form__label--radio {
+  position: relative;
+  width: fit-content;
+  display: inline-block;
+  margin: 20px 20px 0 0;
+  line-height: 20px;
+}
+
+.form__radio {
+  cursor: pointer;
+  margin-right: 8px;
+  opacity: 0;
+  user-select: none;
+}
+
+.radio__custom {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.form__radio:not(:checked) + .radio__custom {
+  border: 1px solid var(--input-color-inactive);
+}
+
+.form__label--radio .form__radio:checked ~ .radio__custom {
+  background-color: var(--primary-color);
+}
+
+.radio__custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.form__label--radio .form__radio:checked ~ .radio__custom:after {
+  display: block;
+}
+
+.form__label--radio .radio__custom:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.form__input {
+  width: 245px;
+  height: 38px;
+  border: 1px solid var(--input-color-inactive);
+  border-radius: 6px;
+  outline: none;
+  padding: 8px 10px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.form__input--mail {
+  width: 500px;
+}
+
+.form__input:invalid {
+  border: 1px solid var(--input-color-error);
+}
+
+.form__input:focus {
+  border: 1px solid var(--input-color-active);
+}
+
+.form__info {
+  color: var(--text-color-secondary);
+  font-size: var(--fs-subtext);
+  line-height: 18px;
+  display: inline-block;
+  width: 500px;
+  margin-top: 7px;
+}
+
+.form__select {
+  width: 245px;
+  height: 38px;
+  border: 1px solid var(--input-color-inactive);
+  border-radius: 6px;
+  outline: none;
+  padding: 8px 10px;
+  font-size: var(--fs-text);
+  cursor: pointer;
+  color: var(--text-color-primary);
+}
+
+.form__select:invalid {
+  color: var(--text-color-placeholder);
+}
+
+.form__select:focus {
+  border: 1px solid var(--input-color-active);
+  color: var(--text-color-primary);
+}
+
+.form__button {
+  width: 500px;
+  height: 38px;
+  margin-top: 20px;
+  border-radius: 6px;
+  color: var(--text-color-button);
+  background-color: var(--primary-color);
+  border: 1px solid var(--input-color-inactive);
+  cursor: pointer;
+  font-size: var(--fs-text);
+  font-weight: 500;
+}
+
+.form__button:focus {
+  border: 1px solid var(--input-color-active);
+}
+
+.form__info--terms {
+  display: block;
+  width: 400px;
+  text-align: center;
+  margin: 22px auto;
+  height: 36px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.form__text {
+  color: var(--text-color-primary);
+  font-size: var(--fs-text);
+  line-height: 22px;
+}
+
+.log-in-container {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  height: 22px;
+  margin-top: 41px;
+}
+
+.log-in-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 500px;
+  height: 1px;
+  background-color: var(--input-color-inactive);
+  bottom: 58px;
+}
