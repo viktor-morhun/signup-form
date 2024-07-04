@@ -20,6 +20,7 @@ input, button, textarea, select {
   --text-color-primary: rgba(84, 84, 84, 1);
   --text-color-secondary: rgba(150, 150, 150, 1);
   --text-color-button: rgba(255, 255, 255, 1);
+  --text-color-placeholder: rgba(84, 84, 84, 0.4);
 
   --input-color-inactive: rgba(228, 228, 228, 1);
   --input-color-active: rgba(0, 123, 255, 1);
@@ -39,7 +40,6 @@ html {
   position: relative;
   width: 570px;
   height: 590px;
-  /* background-color: coral; */
   margin: 55px auto;
   padding: 35px 35px 16px 35px;
   background-color: var(--background-form-color);
@@ -64,8 +64,55 @@ html {
 }
 
 .form__label--radio {
+  position: relative;
   width: fit-content;
+  display: inline-block;
   margin: 20px 20px 0 0;
+  line-height: 20px;
+}
+
+.form__radio {
+  cursor: pointer;
+  margin-right: 8px;
+  opacity: 0;
+  user-select: none;
+}
+
+.radio__custom {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.form__radio:not(:checked) + .radio__custom {
+  border: 1px solid var(--input-color-inactive);
+}
+
+.form__label--radio .form__radio:checked ~ .radio__custom {
+  background-color: var(--primary-color);
+}
+
+.radio__custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.form__label--radio .form__radio:checked ~ .radio__custom:after {
+  display: block;
+}
+
+.form__label--radio .radio__custom:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .form__input {
@@ -100,11 +147,6 @@ html {
   margin-top: 7px;
 }
 
-.form__radio {
-  /* display: inline-block; */
-  cursor: pointer;
-}
-
 .form__select {
   width: 245px;
   height: 38px;
@@ -114,15 +156,16 @@ html {
   padding: 8px 10px;
   font-size: var(--fs-text);
   cursor: pointer;
+  color: var(--text-color-primary);
 }
 
 .form__select:invalid {
-  opacity: 0.4;
-  color: var(--text-color-primary);
+  color: var(--text-color-placeholder);
 }
 
 .form__select:focus {
   border: 1px solid var(--input-color-active);
+  color: var(--text-color-primary);
 }
 
 .form__button {
